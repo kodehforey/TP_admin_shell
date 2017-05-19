@@ -71,15 +71,15 @@ case $choix in
 ;;
 	'c') echo "archivage"
 	#archivage des fichier du rep home modifier par le sudoer il ya 2 jours
-	mkdir -p /home/ushi-deshi/archive
-	find /home/ushi-deshi/ -type f -mtime 2 -print>/home/ushi-deshi/ficmodi
+	mkdir -p /home/seed/archive
+	find /home/seed/ -type f -mtime 2 -print>/home/ushi-deshi/ficmodi
 	while read line
 	do
 	cp $line archive
-	done </home/ushi-deshi/ficmodi
+	done </home/seed/ficmodi
 	tar -czvf archive.tar.gz archive
 	#mv archive.tar.gz /media/usb/*/archive.tar.gz
-	mv archive.tar.gz /home/ushi-deshi/prof/archive.tar.gz
+	mv archive.tar.gz /home/seed/prof/archive.tar.gz
 	;;
 	'd') echo "les informations sur l'utilisation du disque :"
 		df -h |grep /dev/sd
